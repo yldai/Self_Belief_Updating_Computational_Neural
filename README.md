@@ -1,5 +1,5 @@
 # Self_Belief_Updating_Computational_Neural
-The repository contains de-identified effective connectivity data and the codes used to support the main findings in the Dai et al. manuscript
+The repository contains de-identified behavioral and effective connectivity data and the codes used to support the main findings in the Dai et al. manuscript
 
 ## Dynamic causal modeling Model 1: general self belief updating and update magnitude modulatory effect
 
