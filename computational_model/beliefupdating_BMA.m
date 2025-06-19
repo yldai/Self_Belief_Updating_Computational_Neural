@@ -9,7 +9,7 @@
 % for all participants were combined into two data structures for the BMA procedures.
 
 %Specify participant files 
-subject_ids = {'100','101','102'...,'200'}; % modify as needed
+subject_ids = {'100','101','102'...'200'}; % modify as needed
 n = numel(subject_ids);
 posteriors = cell(n, 1);
 Fs = zeros(n, 1);
