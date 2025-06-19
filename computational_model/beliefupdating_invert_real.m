@@ -3,7 +3,7 @@
 
 % VBA toolbox downloaded from https://mbb-team.github.io/VBA-toolbox/download/.
 
-% Biased self belief updating model specified towards the end of script.
+% Self belief updating generative model specified towards the end of script.
 
 % This script is used to perform self belief updating generative model inversion to a single participant.
 % Through inverting the model at subject level, posterior distributions of parameters, posterior probabilities
