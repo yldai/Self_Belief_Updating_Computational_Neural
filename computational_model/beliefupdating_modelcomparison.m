@@ -5,13 +5,13 @@
 
 % This script iteratively invert the full model and the reduced models to each participant through 
 % selectively fixing prior mean and covariance to zero and performing VBA_NLStateSpaceModel function 
-% using different parameter permutations. Posterior distributions and log evidences (i.e. free energy 
+% using different parameter permutations. Posterior distributions and Bayesian log model evidences (i.e. free energy 
 % approximation) across the four models were combined and saved for variational Bayesian Model Comparison.
 
 
 function beliefupdating_modelcomparison()
 % Read participant files and initiate data structures to store outputs
-subject = {'303','304','305','312','313','314','317','321','322','323','331','332','334','341','342','345','351','355','358','359','377','381','303','316','319','328','330','339','343','346','347','348','349','352','360','363','364','366','368','372','374','375','379','382','385','388','403','409','416'};
+subject_ids = {'100','101','102'...,'200'}; % modify as needed
 n_subjects = length(subject);
 n_models = 4;
 F_values_matrix = zeros(n_models, n_subjects);
@@ -20,7 +20,7 @@ out_all = cell(n_models, n_subjects);
 
 for s = 1:n_subjects
     subj_id = subject{s};
-    filename = ['/Users/yingliangdai/Desktop/behavioral_results/controls/' subj_id '_linearmodel_all.csv'];
+    filename = ['/Users/Desktop/behavioral_results/controls/' subj_id '_linearmodel_all.csv'];
     % specify input variables
     data = readtable(filename);
     N = 40;
