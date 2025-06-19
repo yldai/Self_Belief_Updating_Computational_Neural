@@ -10,11 +10,11 @@ The [beliefupdating_simrecover.m](computational_model/beliefupdating_simrecover.
 The [beliefupdating_abplot.m](computational_model/beliefupdating_simrecover.m) calls 'beliefupdating_simrecover.m' and iteratively perform simulation-recovery analysis with 
  parameters a and b randomly sampled from Gaussian distribution. This function reproduces what's presented in Supplementary Figure 6. Simulated and recovered (inferred) parameter values from each iteration will be aggregated and compared, with pearson's correlation coefficient (R) and root mean squared error (RMSE) computed to quantify accuracy of parameter recovery. See comments in the beginning of script for specific instructions.
  
- The [beliefupdating_simrecover_SNRvar.m](computational_model/beliefupdating_simrecover_SNRvar.m) is a non-independent function used to test model performance across a range of signal-to-noise ratios (SNRs). This function is called using [SNR_loop.m](computational_model/SNR_loop.m), which inputs variations of SNR and iteratively perform simulation-recovery analysis per SNR level. For each SNR, simulated and recovered (inferred) parameter values are collected to compute RMSE as presented in Supplementary Figure 7. quantify the accuracy of parameter recovery as a function of SNR.
+ The [beliefupdating_simrecover_SNRvar.m](computational_model/beliefupdating_simrecover_SNRvar.m) is a non-independent function used to test model performance across a range of signal-to-noise ratios (SNRs). This function is called using [SNR_loop.m](computational_model/SNR_loop.m), which inputs variations of SNR and iteratively perform simulation-recovery analysis per SNR level. For each SNR, simulated and recovered (inferred) parameter values are collected to compute RMSE as presented in Supplementary Figure 7. quantify the accuracy of parameter recovery as a function of SNR. See comments in the beginning of script for specific instructions.
 
 ## Computational modeling: model inversion using real experimental data
 
-The [100_linearmodel_all.csv](computational_model/100_linearmodel_all.csv) is a surrogate participant file. This file provides an example of the structure of participant file that's loaded to perform the model inversion function. 
+The [100_linearmodel_all.csv](computational_model/100_linearmodel_all.csv) is a surrogate participant file that's loaded in to perform the model inversion function. 
 
 ## Computational modeling: Bayesian model averaging and random effect Bayesian model comparison
 
