@@ -10,7 +10,7 @@
 % Root mean squared error (RMSE) is then computed to quantify the accuracy of parameter recovery
 % as a function of SNR.
 
-% SNR is varied from 1 to 40, with 20 simulation?recovery iterations performed per SNR level.
+% SNR is varied from 1 to 40, with 20 simulation-recovery iterations performed per SNR level.
 % To change SNR variation, adapt line 17 
 % To change iteration per SNR level, adapt line 18.
 
