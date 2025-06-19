@@ -63,9 +63,7 @@ out0.prior.SigmaPhi=diag([0.1, 0.1]);
 % Save outputs if needed
 save('/Users/yingliangdai/Desktop/behavioral_results/R_behav_codes/VBA_scripts/VBA_posterior_BMA.mat', 'p_BMA','PP');
 
-% ==========================
-% GENERATIVE MODEL FUNCTION 
-% ==========================
+%% Self belief updating generative model
 function [gx] = generative_model(~, theta, inputs, ~)
     BR=inputs(1,:);
     E1=inputs(2,:);
@@ -75,23 +73,16 @@ function [gx] = generative_model(~, theta, inputs, ~)
     sign_EE=(BR - E1) ./ abs(BR - E1);
     % ---------------------------------------------------------------
     % Define conditions here
-    % ---------------------------------------------------------------
-    % When others are doing better than me in self rating of a positive word (higher rating
-    % than me), the theoretical update direction will be to increase the rating (I should be
-    % better). When others are doing worse than me for a positive word (lower rating than me),
-    % the theoretical update direction will be to decrease the rating (I should be worse)
-    
-    % Vise versa for negative words, so sign_EE * V is used to adjust the conditions valence 
-    % based on word valence.
+    % Favorable or unfavorable casted by sign of EE and word valence V
     % ----------------------------------------------------------------
     News = sign_EE .* V;
     % ----------------------------------------------------------------
     % define learning rate here
     % ----------------------------------------------------------------
-    % LRothers_better = a + b,
-    % LRothers_worse = a - b
-    % ----------------------------------------------------------------
+    % LRfavorable = a + b,
+    % LRunfavorable = a - b
     LR = theta(1) + News .* theta(2);
+    % ----------------------------------------------------------------
     % Define E2 here
     % ----------------------------------------------------------------
     E2 = E1 + LR .* (BR - E1); 
@@ -100,4 +91,5 @@ function [gx] = generative_model(~, theta, inputs, ~)
     % ----------------------------------------------------------------
     gx = E2;
 end
+
 
