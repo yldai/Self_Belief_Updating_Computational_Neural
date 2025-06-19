@@ -20,7 +20,7 @@ The [100_linearmodel_all.csv](computational_model/100_linearmodel_all.csv) is a 
 
 Model inversion at subject level is performed using [beliefupdating_invert_real.m](computational_model/beliefupdating_invert_real.m). Through inverting the model at subject level, posterior distributions of parameters, posterior probabilities and Bayesian log model evidence are estimated and visualized via built in functions of VBA. This function reproduces what's presented in Supplementary Figure 4. 
 
-## Computational modeling: Bayesian model averaging (BMA) and random effect Bayesian model comparison
+## Computational modeling: Bayesian model averaging (BMA) and random effect Bayesian model comparison (RFX-BMC)
 
 The [beliefupdating_BMA.m](computational_model/beliefupdating_BMA.m) is used to derive the group-level parameter estimates and posterior probabilities. This function is adapted from [beliefupdating_invert_real.m](computational_model/beliefupdating_invert_real.m), adding a for loop to iteratively invert the model to all participants. Posterior outputs were collated for the BMA procedures. 
 
