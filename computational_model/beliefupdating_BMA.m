@@ -9,14 +9,14 @@
 % for all participants were combined into two data structures for the BMA procedures.
 
 %Specify participant files 
-subject_ids = {'303','304','305','312','313','314','316','317','319','321','322','323','328','330','331','332','334','339','341','342','343','345','346','347','348','349','351','352','355','358','359','360','363','364','366','368','372','374','375','377','379','381','382','385','388','403','409','416'};
+subject_ids = {'100','101','102'...,'200'}; % modify as needed
 n = numel(subject_ids);
 posteriors = cell(n, 1);
 Fs = zeros(n, 1);
 
 for s = 1:n
     subj = subject_ids{s};
-    filename = ['/Users/yingliangdai/Desktop/behavioral_results/controls/' subj '_linearmodel_all.csv'];
+    filename = ['/Users/Desktop/behavioral_results/controls/' subj '_linearmodel_all.csv'];
 
   %Define input variables 
     data = readtable(filename);
@@ -61,7 +61,7 @@ out0.prior.SigmaPhi=diag([0.1, 0.1]);
 [PP]=VBA_PP0(posterior,out);
 
 % Save outputs if needed
-save('/Users/yingliangdai/Desktop/behavioral_results/R_behav_codes/VBA_scripts/VBA_posterior_BMA.mat', 'p_BMA','PP');
+save('/Users/Desktop/behavioral_results/R_behav_codes/VBA_scripts/VBA_posterior_BMA.mat', 'p_BMA','PP');
 
 %% Self belief updating generative model
 function [gx] = generative_model(~, theta, inputs, ~)
