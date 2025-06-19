@@ -1,9 +1,9 @@
-%% Model inversion using real experimental data
+%% Model inversion using real experimental data and BMA analysis
 % Please make sure that VBA-toolbox-master has been added to the MATLAB path.
 
 % VBA toolbox downloaded from https://mbb-team.github.io/VBA-toolbox/download/.
 
-% Biased self belief updating model specified towards the end of script.
+% Self belief updating generative model specified towards the end of script.
 
 % After iteratively inverting the model to each participant, posterior distributions and log evidences (i.e. free energy approximation) 
 % for all participants were combined into two data structures for the BMA procedures.
