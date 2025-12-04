@@ -39,7 +39,7 @@ BMA = spm_dcm_peb_bmc(PEB);
 
 % Review BMA results
 % -----------------------------------------------------------------------
-% Second-level effect - overall self-belief updating (Table 2)
+% Second-level effect - valence-dependent modulatory effects (Table 2)
 %   Threshold: Free energy, Strong evidence (Pp>.95)
 %   Display as matrix: 
 %     1) A-matrix (endogenous connectivity)
