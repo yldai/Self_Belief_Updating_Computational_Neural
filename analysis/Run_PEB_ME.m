@@ -18,7 +18,7 @@
 clear
 
 % Load GCM
-load('/data/projects/punim1864/yingliang/spartan_scripts/DCM_scripts/specify/est_infer/GCM_controls_all.mat');
+load('/your/path/to/GCM_controls_all.mat');
 
 % PEB specification (load prepared design matrix)
 load('M_Controls_ME.mat');
@@ -34,11 +34,11 @@ M.Xnames = X_labels;
 
 % PEB model estimation (select DCM parameters to take to 2nd level)
 [PEB, RCM] = spm_dcm_peb(DCM, M, {'A','B'});
-save('/data/projects/punim1864/yingliang/spartan_scripts/DCM_scripts/specify/est_infer/PEB_AB_all_ME.mat', 'PEB', 'RCM');
+save('/choose/your/path/to/save/PEB_AB_all_ME.mat', 'PEB', 'RCM');
 
 % PEB model comparison (automatic search over reduced PEB models)
 BMA = spm_dcm_peb_bmc(PEB);
-save('/data/projects/punim1864/yingliang/spartan_scripts/DCM_scripts/specify/est_infer/BMA_search_AB_all_ME.mat', 'BMA');
+save('/choose/your/path/to/save/BMA_search_AB_all_ME.mat', 'BMA');
 
 % Review BMA
 spm_dcm_peb_review(BMA, DCM);
