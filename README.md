@@ -3,7 +3,7 @@ The repository contains de-identified behavioral and effective connectivity data
 
 ## Dynamic causal modelling Model 1: average effective connectivity modulation and magnitude-related variance during self-belief updating
 
-First combine all the GCM_controls_all_kx.mat into GCM_controls_all.mat using the [combine_GCM_upd.m](data/combine_GCM_upd.m).
+First combine all the GCM_controls_all_kx.mat into GCM_controls_all.mat using the [combine_GCM_ME.m](data/combine_GCM_ME.m).
 
 The [Run_PEB_ME.m](analysis/Run_PEB_ME.m) reproduces the parametric empirical Bayes (PEB) results for Model 1, which examined over-all self-belief updating modulatory effect and update magnitude (proportion to estimation error corrected) associated variance in effective connectivity during self-belief updating. Click ‘Please select...’ on the resulting 'PEB - review parameters' screen and choose ‘Second-level effect - mean’ will demonstrate the general modulatory effect. Choose ‘Second-level effect - ME’ will display the magnitude modulated parameters. Please select posterior probability (Pp) > 0.95 as the threshold. 
 
