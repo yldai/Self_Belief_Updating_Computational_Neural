@@ -16,12 +16,13 @@
 % connectivity and a regressor (single column of update magnitude (proportion of
 % estimation error corrected) for each participant) denoting the connectivity variance.
 clear
+close all
 
-% Load GCM
-load('/your/path/to/GCM_controls_all.mat');
+% Load GCM & design matrix
+load('../data/GCM_controls_all.mat');
+load('../dm/M_Controls_ME.mat');
 
 % PEB specification (load prepared design matrix)
-load('M_Controls_ME.mat');
 X = dm.X;
 K = width(X);
 X(:,2:K)=X(:,2:K)-mean(X(:,2:K));
@@ -32,13 +33,20 @@ M.Q = 'fields';
 M.X = X;
 M.Xnames = X_labels;
 
-% PEB model estimation (select DCM parameters to take to 2nd level)
+% Hierarchical (PEB) inversion of DCMs using BMR and Variational Laplace
 [PEB, RCM] = spm_dcm_peb(DCM, M, {'A','B'});
-save('/choose/your/path/to/save/PEB_AB_all_ME.mat', 'PEB', 'RCM');
 
-% PEB model comparison (automatic search over reduced PEB models)
+% Hierarchical (PEB) model comparison and averaging
 BMA = spm_dcm_peb_bmc(PEB);
-save('/choose/your/path/to/save/BMA_search_AB_all_ME.mat', 'BMA');
 
-% Review BMA
-spm_dcm_peb_review(BMA, DCM);
+% Review BMA results
+% -----------------------------------------------------------------------
+% Second-level effect - overall self-belief updating (Table 2)
+%   Threshold: Free energy, Strong evidence (Pp>.95)
+%   Display as matrix: 
+%     1) A-matrix (endogenous connectivity)
+%     2) B-matrix (modulatory connectivity; Please select - Second-level effect - 
+%        Mean for average modulatory effects and ME for update magnitude associated
+%        variance in connectivity; input up)
+% -----------------------------------------------------------------------
+spm_dcm_peb_review(BMA, DCM)
