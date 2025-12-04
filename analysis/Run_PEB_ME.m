@@ -14,7 +14,7 @@
 % variance in connectivity parameter strengths. The design matrix included
 % an intercept term (single column of ones) denoting the overall mean
 % connectivity and a regressor (single column of update magnitude (proportion of
-% estimation error corrected for each participant) denoting the connectivity variance.
+% estimation error corrected) for each participant) denoting the connectivity variance.
 clear
 
 % Load GCM
