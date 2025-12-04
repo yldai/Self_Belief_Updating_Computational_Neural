@@ -14,12 +14,13 @@
 % an intercept term (single column of ones) denoting the overall mean
 % connectivity.
 clear
+close all
 
-% Load GCM
-load('/data/projects/punim1864/yingliang/spartan_scripts/DCM_scripts/specify/est_infer/GCM_controls_bg.mat');
+% Load GCM & design matrix
+load('../data/GCM_controls_bg.mat');
+load('../dm/M_Controls_mean.mat');
 
 % PEB specification (load prepared design matrix)
-load('M_Control_mean.mat');
 X = dm.X;
 K = width(X);
 X(:,2:K)=X(:,2:K)-mean(X(:,2:K));
