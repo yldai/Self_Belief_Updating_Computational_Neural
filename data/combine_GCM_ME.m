@@ -21,4 +21,4 @@ data8=data8.data8;
 %combinedData = [data1; data2];
 combinedData = vertcat(data1, data2,data3, data4, data5, data6, data7, data8);
 DCM=combinedData;
-save('GCM_controls_all.mat', 'DCM');
+save('../data/GCM_controls_all.mat', 'DCM');
