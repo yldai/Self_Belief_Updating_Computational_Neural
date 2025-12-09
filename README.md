@@ -1,6 +1,8 @@
 # Self_Belief_Updating_Computational_Neural
 The repository contains de-identified behavioral and effective connectivity data and the codes used to support the main findings in the Dai et al. manuscript.
 
+https://github.com/mdgreaves/belief-updating-model
+
 ## Dynamic causal modelling Model 1: average effective connectivity modulation and magnitude-related variance during self-belief updating
 
 First combine all the GCM_controls_all_kx.mat into GCM_controls_all.mat using the [combine_GCM_ME.m](data/combine_GCM_ME.m).
