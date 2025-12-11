@@ -13,7 +13,7 @@ for i = 1:n_subjects
     subject{i} = extractBefore(fn, '_');
 
     % Read file
-    data = readtable(fullfile('./data/', fn));
+    data = readtable(fullfile('./beh_data/', fn));
 
     % Convert cell array to string in case of NA
     np_str = string(data.np);
@@ -53,10 +53,10 @@ for i = 1:n_subjects
     np_negative(i)=mean(npi(negative));
 end
 
-% show average valence rating (M ¡À SD) and paired t-test
-fprintf('The average valence rating for positive attribute: %.2f ¡À %.2f\n', ...
+% show average valence rating (M Â¡Ã€ SD) and paired t-test
+fprintf('The average valence rating for positive attribute: %.2f Â¡Ã€ %.2f\n', ...
     mean(np_positive), std(np_positive));
-fprintf('The average valence rating for positive attributes: %.2f ¡À %.2f\n', ...
+fprintf('The average valence rating for positive attributes: %.2f Â¡Ã€ %.2f\n', ...
     mean(np_negative), std(np_negative));
 [~, p, ~, stats] = ttest(np_positive, np_negative);
 fprintf('Total trials: t(%d) = %.2f, p = %.4f\n', ...
