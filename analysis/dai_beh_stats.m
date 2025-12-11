@@ -16,7 +16,7 @@ for i = 1:n_subjects
     subject{i} = extractBefore(fn, '_');
 
     % Read file
-    data = readtable(fullfile('./data/', fn));
+    data = readtable(fullfile('./beh_data/', fn));
 
     BR{i} = data.base_rate;
     E1{i} = data.parpre_rate;
