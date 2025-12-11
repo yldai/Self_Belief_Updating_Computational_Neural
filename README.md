@@ -18,7 +18,7 @@ First combine all the GCM_controls_all_kx.mat into GCM_controls_all.mat using th
 
 The [Run_PEB_ME.m](analysis/Run_PEB_ME.m) reproduces the parametric empirical Bayes (PEB) results for Model 1, which examined overall self-belief updating modulatory effects and update magnitude (proportion to estimation error corrected) associated variance in effective connectivity during self-belief updating. Select B-matrix on the 'PEB - review parameters' screen, set input as 'up'. Click ‘Please select...’ dropdown, choose ‘Second-level effect - Mean’ for the general modulatory effects. Choose ‘Second-level effect - ME’ for update magnitude associated variance. Please select posterior probability (Pp) > 0.95 as the threshold. 
 
-## Dynamic causal modeling Model 2: valence-dependent modulatory effects
+## Dynamic causal modelling Model 2: valence-dependent modulatory effects
 
 First combine all the GCM_controls_bg_kx.mat into GCM_controls_bg.mat using the [combine_GCM_bg.m](data/combine_GCM_bg.m).
 
