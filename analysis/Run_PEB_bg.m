@@ -12,13 +12,15 @@
 % This section runs a PEB model quantifying the between-subject commonality
 % in connectivity parameters across the sample. The design matrix included
 % an intercept term (single column of ones) denoting the overall mean
-% connectivity.
+% connectivity. Three other regressors, including favorable v. unfavorable 
+% trial-wise estimation error magnitudes ratio and trial numbers ratio, as 
+% well as age, were also included to account for potential confounds. 
 clear
 close all
 
 % Load GCM & design matrix
 load('../data/GCM_controls_bg.mat');
-load('../dm/M_Controls_mean.mat');
+load('../dm/M_Controls_bg.mat');
 
 % PEB specification (load prepared design matrix)
 X = dm.X;
