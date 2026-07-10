@@ -2,7 +2,7 @@
 The repository contains de-identified behavioral and effective connectivity data and the codes used to support the main findings in the Dai et al. manuscript.
 
 ## Descriptive statistics
-The [dai_beh_stats.m](analysis/dai_beh_stats.m) reproduces inferential statistics including the proportion of updated trials regardless of valence and by valence (favorable v. unfavorable), and the mean update magnitudes by valence (favorable v. unfavorable, proportion of estimation error corrected). Please run upd_data_bmc.m from https://github.com/mdgreaves/belief-updating-model after running [dai_beh_stats.m](analysis/Run_PEB_ME.m). 
+The [dai_beh_stats.m](analysis/dai_beh_stats.m), [dai_beh_stats2.m](analysis/dai_beh_stats2.m) and [dai_beh_stats3.m](analysis/dai_beh_stats3.m) reproduce inferential statistics including the proportion of updated trials regardless of valence and by valence (favorable v. unfavorable), and the mean update magnitudes by valence (favorable v. unfavorable, proportion of estimation error corrected). Please run [dai_beh_stats.m](analysis/dai_beh_stats.m) before running upd_data_bmc.m from https://github.com/mdgreaves/belief-updating-model, and other adapted behavioral models ([upd_data_bmc.m](analysis/behavioral_model_participant_valence/upd_data_bmc.m) for behavioral modelling based on participant defined word valence, and [upd_data_bmc.m](analysis/behavioral_model_scaling_a/upd_data_bmc.m) for behavioral modelling with baseline learning scaled by estimation error magnitude). 
 
 The [beh_stats2.m](analysis/beh_stats2.m) reproduces descriptive statistics including the average total number of trials, the average number of updated trials, the average total and trial-wise estimation error magnitudes by valence (favorable v. unfavorable). 
 
