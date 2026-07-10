@@ -15,12 +15,15 @@
 % an intercept term (single column of ones) denoting the overall mean
 % connectivity and a regressor (single column of update magnitude (proportion of
 % estimation error corrected) for each participant) denoting the connectivity variance.
+% Three other regressors, including favorable v. unfavorable trial-wise estimation
+% error magnitudes ratio and trial numbers ratio, as well as age, were also included to 
+% account for potential confounds. 
 clear
 close all
 
 % Load GCM & design matrix
 load('../data/GCM_controls_all.mat');
-load('../dm/M_Controls_ME.mat');
+load('../dm/M_Controls_ME_new.mat');
 
 % PEB specification (load prepared design matrix)
 X = dm.X;
