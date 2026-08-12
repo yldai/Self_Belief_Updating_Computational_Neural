@@ -19,10 +19,8 @@
 clear
 
 % Load GCM
-load('/data/projects/punim1864/yingliang/spartan_scripts/DCM_scripts/specify/est_infer/GCM_controls_all.mat');
-
-% PEB specification (load prepared design matrix)
-load('M_Controls_ME_new.mat');
+load('../data/GCM_controls_all.mat');
+load('../dm/M_Controls_ME_new.mat');
 X = dm.X;
 K = width(X);
 X(:,2:K)=X(:,2:K)-mean(X(:,2:K));
@@ -33,13 +31,20 @@ M.Q = 'fields';
 M.X = X;
 M.Xnames = X_labels;
 
-% PEB model estimation (select DCM parameters to take to 2nd level)
+% Hierarchical (PEB) inversion of DCMs using BMR and Variational Laplace
 [PEB, RCM] = spm_dcm_peb(DCM, M, {'A','B'});
-save('/data/projects/punim1864/yingliang/spartan_scripts/DCM_scripts/specify/est_infer/PEB_AB_all_ME_new.mat', 'PEB', 'RCM');
 
-% PEB model comparison (automatic search over reduced PEB models)
+% Hierarchical (PEB) model comparison and averaging
 BMA = spm_dcm_peb_bmc(PEB);
-save('/data/projects/punim1864/yingliang/spartan_scripts/DCM_scripts/specify/est_infer/BMA_search_AB_all_ME_new.mat', 'BMA');
 
-% Review BMA
-spm_dcm_peb_review(BMA, DCM);
+% Review BMA results
+% -----------------------------------------------------------------------
+% Second-level effect - overall self-belief updating (Table 2)
+%   Threshold: Free energy, Strong evidence (Pp>.95)
+%   Display as matrix: 
+%     1) A-matrix (endogenous connectivity)
+%     2) B-matrix (modulatory connectivity; Please select - Second-level effect - 
+%        Mean for average modulatory effects and ME for update magnitude associated
+%        variance in connectivity; input up)
+% -----------------------------------------------------------------------
+spm_dcm_peb_review(BMA, DCM)
