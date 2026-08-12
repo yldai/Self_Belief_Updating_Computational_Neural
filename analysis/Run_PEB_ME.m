@@ -23,7 +23,7 @@ close all
 
 % Load GCM & design matrix
 load('../data/GCM_controls_all.mat');
-load('../dm/M_Controls_ME_new.mat');
+load('../dm/M_Controls_ME.mat');
 
 % PEB specification (load prepared design matrix)
 X = dm.X;
