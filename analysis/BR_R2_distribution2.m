@@ -1,4 +1,4 @@
-%Run BR_sim_full.m first.
+% Run BR_sim_full.m first.
 R2_actual = 0.4811;
 ci_cal    = prctile(R2_runs, [2.5 97.5]);
 
