@@ -1,3 +1,4 @@
+% Run dai_beh_stats.m first.
 word_order = {'SENSITIVE','UNIMPORTANT','UNDESIRABLE','HELPLESS', ...
     'ORDINARY','INTELLIGENT','INFERIOR','ANNOYING','LIKABLE', ...
     'CHEERFUL','WEAK','ASHAMED','NEEDY','HUMBLE','CARELESS', ...
@@ -30,9 +31,11 @@ sd_scale = 0.75;
 lo_k = max(mu_empirical - sd_scale .* sigma_empirical, 5);
 hi_k = min(mu_empirical + sd_scale .* sigma_empirical, 95);
 
-x_mu = []; y_br = [];
+x_mu = []; 
+y_br = [];
 for s = 1:S
-    br_s = double(BR{s}); wrd_s = W{s};
+    br_s = double(BR{s}); 
+    wrd_s = W{s};
     for i = 1:numel(br_s)
         k = find(strcmp(word_order, wrd_s{i}), 1);
         if isempty(k), continue; end
