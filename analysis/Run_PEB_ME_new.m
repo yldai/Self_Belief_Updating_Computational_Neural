@@ -18,7 +18,7 @@
 % estimation error corrected for each participant) denoting the connectivity variance.
 clear
 
-% Load GCM
+% Load GCM & design matrix
 load('../data/GCM_controls_all.mat');
 load('../dm/M_Controls_ME_new.mat');
 X = dm.X;
