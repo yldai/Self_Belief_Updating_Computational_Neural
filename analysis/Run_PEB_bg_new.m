@@ -18,7 +18,7 @@ clear
 
 % Load GCM & design matrix
 load('../data/GCM_controls_bg.mat');
-load('../dm/M_Controls_bg.mat');
+load('../dm/M_Controls_bg_new.mat');
 
 X = dm.X;
 K = width(X);
