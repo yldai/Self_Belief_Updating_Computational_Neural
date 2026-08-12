@@ -25,7 +25,9 @@ The [BR_sim_full.m](analysis/BR_sim_full.m) iteratively simulates base rate data
 
 If the total favorable error magnitude (EEf) was larger than unfavorable error magnitude (EEu) by 10 percentage points or more, all favorable trials were pooled by descending trial-wise error magnitude (EE[k]), and target condition was set to unfavorable. The opposite applied if the total unfavorable error magnitude was larger than favorable error magnitude by 10 percentage points or more. For all trials in the pool, the algorithm iteratively attempted to redraw each base rate from the Gaussian distribution until the trial met the target condition. If this attempt failed, the algorithm then redrew each base rate until the trial-wise error magnitude (EE[k]) was reduced compared to before the redraw. 
 
-Sampling broke when the difference between favorable and unfavorable error magnitudes was less than 10 percentage points. The main goal for sampling adjusted base rates was to reach approximately equal estimation error magnitudes across valence. The behavioral data and algorithm codes are available in the github repository accompanying this submission. The full algorithm was performed for 1000 times to generate multiple base rate datasets.
+Sampling broke when the difference between favorable and unfavorable error magnitudes was less than 10 percentage points. The main goal for sampling adjusted base rates was to reach approximately equal estimation error magnitudes across valence. The behavioral data and algorithm codes are available in the github repository accompanying this submission. The full algorithm was performed for 1000 times to generate multiple base rate datasets. 
+
+Figure S1a could be reproduced using [BR_parity_plot.m](analysis/BR_parity_plot.m), Figure S1b could be reproduced using [BR_R2_distribution2.m](analysis/BR_R2_distribution2.m).
 
 ## Dynamic causal modelling Model 1: average effective connectivity modulation and magnitude-related variance during self-belief updating
 
