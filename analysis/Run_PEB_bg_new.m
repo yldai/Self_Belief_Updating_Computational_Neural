@@ -16,11 +16,10 @@
 % connectivity.
 clear
 
-% Load GCM
-load('/data/projects/punim1864/yingliang/spartan_scripts/DCM_scripts/specify/est_infer/GCM_controls_bg.mat');
+% Load GCM & design matrix
+load('../data/GCM_controls_bg.mat');
+load('../dm/M_Controls_bg.mat');
 
-% PEB specification (load prepared design matrix)
-load('M_Controls_bg.mat');
 X = dm.X;
 K = width(X);
 X(:,2:K)=X(:,2:K)-mean(X(:,2:K));
@@ -31,13 +30,20 @@ M.Q = 'fields';
 M.X = X;
 M.Xnames = X_labels;
 
-% PEB model estimation (select DCM parameters to take to 2nd level)
+% Hierarchical (PEB) inversion of DCMs using BMR and Variational Laplace
 [PEB, RCM] = spm_dcm_peb(DCM, M, {'A','B'});
-save('/data/projects/punim1864/yingliang/spartan_scripts/DCM_scripts/specify/est_infer/PEB_AB_bg_new.mat', 'PEB', 'RCM');
 
-% PEB model comparison (automatic search over reduced PEB models)
+% Hierarchical (PEB) model comparison and averaging
 BMA = spm_dcm_peb_bmc(PEB);
-save('/data/projects/punim1864/yingliang/spartan_scripts/DCM_scripts/specify/est_infer/BMA_search_AB_bg_new.mat', 'BMA');
 
-% Review BMA
-spm_dcm_peb_review(BMA, DCM);
+% Review BMA results
+% -----------------------------------------------------------------------
+% Second-level effect - valence-dependent modulatory effects (Table 2)
+%   Threshold: Free energy, Strong evidence (Pp>.95)
+%   Display as matrix: 
+%     1) A-matrix (endogenous connectivity)
+%     2) B-matrix (modulatory connectivity; Please select - Second-level effect - 
+%        Mean for average modulatory effects; input 'g' for favorable trials modulatory
+%        effects and 'b' for unfavorable trials)
+% -----------------------------------------------------------------------
+spm_dcm_peb_review(BMA, DCM)
