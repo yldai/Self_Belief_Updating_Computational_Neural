@@ -17,7 +17,7 @@ The [mixed_effects_update_choice.m](analysis/mixed_effects_update_choice.m) repr
 Please refer to https://github.com/mdgreaves/belief-updating-model 
 This repository contains MATLAB code for simulating, inverting, and validating a static self-belief updating model. The model captures how participants adjust their self-belief ratings in response to feedback, allowing for asymmetric learning when information is favorable versus unfavorable.
 
-The behavioral model where favorability of trials are defined based on participant-provided word valence ratings could be performed using ([upd_data_bmc.m](analysis/behavioral_model_participant_valence/upd_data_bmc.m). The behavioral model where baseline learning is scaled by estimation error magnitude could be performed using [upd_data_bmc.m](analysis/behavioral_model_scaling_a/upd_data_bmc.m).
+The behavioral model where favorability of trials are defined based on participant-provided word valence ratings could be performed using [upd_data_bmc.m](analysis/behavioral_model_participant_valence/upd_data_bmc.m). The behavioral model where baseline learning is scaled by estimation error magnitude could be performed using [upd_data_bmc.m](analysis/behavioral_model_scaling_a/upd_data_bmc.m).
 
 ## Base rate generative procedure
 
