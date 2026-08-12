@@ -1,7 +1,7 @@
 %% Parametric Empirical Bayes (PEB), Model 2
 
 % This script reproduces the model 2 effective connectivity results
-% reported in the Dai et al. manuscript (Figure 4, Supplementary table 3).
+% reported in the Dai et al. manuscript (Figure 4, Supplementary table 8).
 
 % -----------------------------------------------------------------------
 % Please ensure that your SPM12 folder (r7771) is listed in your MATLAB set
